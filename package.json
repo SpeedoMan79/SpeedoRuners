@@ -1,0 +1,14 @@
+{
+  "name": "gali-dauda",
+  "version": "2.0.0",
+  "description": "Gali Dauda: 3D endless runner (Three.js). Static server, no dependencies.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
