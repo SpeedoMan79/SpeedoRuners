@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#2f6fe4">
+<title>Gali Dauda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c" aria-label="Game"></canvas>
+<div class="fx" id="speed"></div>
+<div class="fx" id="flash"></div>
+
+<div class="hud" id="hud" hidden>
+  <div class="pill"><span class="lbl">Score</span><b id="score">0</b></div>
+  <div class="pill right"><i class="coin-ico" aria-hidden="true"></i><b id="coins">0</b></div>
+</div>
+
+<div class="wrap" id="wrap">
+  <section class="sheet" id="sheet" aria-labelledby="ttl">
+    <header>
+      <h1 id="ttl">Gali Dauda</h1>
+      <p class="sub" id="sub">Patri par bhaago, trainon se bacho, sikke batoro.</p>
+    </header>
+    <div class="stats" id="stats" hidden>
+      <div><span class="lbl">Score</span><b id="fScore">0</b></div>
+      <div><span class="lbl">Sikke</span><b id="fCoins">0</b></div>
+      <div><span class="lbl">Best</span><b id="fBest">0</b></div>
+    </div>
+    <fieldset><legend>Character chuno</legend><div class="opts" id="chars"></div></fieldset>
+    <fieldset><legend>Map chuno</legend><div class="opts" id="maps"></div></fieldset>
+    <button class="play" id="play" type="button">Bhaago!</button>
+    <p class="hint">Left ya right swipe: lane badlo. Upar swipe: kudo. Neeche swipe: phisalo. Computer par arrow keys ya WASD.</p>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
