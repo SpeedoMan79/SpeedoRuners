@@ -298,10 +298,10 @@ function buildTrack(m){
     [-15,15].forEach(function(o){x.fillStyle='rgba(0,0,0,.35)'; x.fillRect(cx+o-5,0,10,256);});
   });
   roadTex=track(ctex(c,1,27));
-  var road=new T.Mesh(track(new T.PlaneGeometry(6.6,216)),track(lm(0xffffff,{map:roadTex})));
+  var road=new T.Mesh(track(new T.PlaneGeometry(6.6,216,1,54)),track(lm(0xffffff,{map:roadTex})));
   road.geometry.rotateX(-Math.PI/2); road.position.set(0,0,-100); road.receiveShadow=true; world.add(road);
   // 3D rails
-  var rm=track(tm(m.rail)), rg=track(new T.BoxGeometry(0.1,0.11,216));
+  var rm=track(tm(m.rail)), rg=track(new T.BoxGeometry(0.1,0.11,216,1,1,54));
   [-2.2,0,2.2].forEach(function(lx){
     [-0.4,0.4].forEach(function(o){
       var r=new T.Mesh(rg,rm); r.position.set(lx+o,0.06,-100); world.add(r);
@@ -314,15 +314,15 @@ function buildTrack(m){
   for(i=0;i<=4;i++){px.beginPath(); px.moveTo(i*32,0); px.lineTo(i*32,128); px.stroke(); px.beginPath(); px.moveTo(0,i*32); px.lineTo(128,i*32); px.stroke();}
   px.fillStyle='#ffd23f'; px.fillRect(6,0,10,128);
   px.fillStyle='rgba(0,0,0,.25)'; px.fillRect(16,0,3,128);
-  var pg=track(new T.PlaneGeometry(2,216)); pg.rotateX(-Math.PI/2);
-  var curbM=track(tm(0x8f8798)), baseG=track(new T.BoxGeometry(2,0.15,216)), curbG=track(new T.BoxGeometry(0.22,0.17,216));
+  var pg=track(new T.PlaneGeometry(2,216,1,54)); pg.rotateX(-Math.PI/2);
+  var curbM=track(tm(0x8f8798)), baseG=track(new T.BoxGeometry(2,0.15,216,1,1,54)), curbG=track(new T.BoxGeometry(0.22,0.17,216,1,1,54));
   [-1,1].forEach(function(s){
     var wt=track(ctex(pc,s<0?-1:1,108)); walkTexs.push(wt);
     var w=new T.Mesh(pg,track(lm(0xffffff,{map:wt}))); w.position.set(s*4.3,0.16,-100); w.receiveShadow=true; world.add(w);
     var b=new T.Mesh(baseG,curbM); b.position.set(s*4.3,0.075,-100); world.add(b);
     var cb=new T.Mesh(curbG,curbM); cb.position.set(s*3.4,0.085,-100); world.add(cb);
   });
-  var ground=new T.Mesh(track(new T.PlaneGeometry(520,520)),track(lm(m.ground)));
+  var ground=new T.Mesh(track(new T.PlaneGeometry(520,520,2,52)),track(lm(m.ground)));
   ground.geometry.rotateX(-Math.PI/2); ground.position.set(0,-0.03,-100); ground.receiveShadow=true; world.add(ground);
 }
 
